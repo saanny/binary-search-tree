@@ -36,25 +36,35 @@ export class BST {
     }
 
     contains(value: number) {
+        let currentNode: BST | null = this;
+        while (currentNode !== null) {
+            if (value < currentNode.value) {
+                currentNode = currentNode.left;
+            } else if (value > currentNode.value) {
+                currentNode = currentNode.right;
+            } else {
+                return true;
+            }
+        }
         return false;
     }
 }
 
 // const BstObject = new BST(10)
-// .insert(5)
-// .insert(15)
-// .insert(2)
-// .insert(5)
-// .insert(1)
-// .insert(5)
-// .insert(1)
-// .insert(3)
-// .insert(13)
-// .insert(22)
-// .insert(25)
-// .insert(12)
-// .insert(14)
+//     .insert(5)
+//     .insert(15)
+//     .insert(2)
+//     .insert(5)
+//     .insert(1)
+//     .insert(5)
+//     .insert(1)
+//     .insert(3)
+//     .insert(13)
+//     .insert(22)
+//     .insert(25)
+//     .insert(12)
+//     .insert(14)
 
-// BstObject.contains(15)
 
-// console.log(BstObject);
+
+// console.log(BstObject.contains(15));
